@@ -1,3 +1,16 @@
+<?php
+
+$dbh = new PDO('mysql:host=localhost;dbname=videogames','root','root');
+$stmt = $dbh->query("SELECT * FROM `developer`,`game`,`platform` LIMIT 50");
+$videogames = $stmt -> fetchAll();
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
