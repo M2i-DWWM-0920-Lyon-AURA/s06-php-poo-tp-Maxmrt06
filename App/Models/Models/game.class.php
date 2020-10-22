@@ -1,4 +1,7 @@
 <?php
+
+require_once '/App/Models/mother.class.php';
+
 final class Game extends Mother
 {
 
@@ -29,6 +32,7 @@ public function __construct(
     $this->developerId = $developerId;
     $this->platformId = $platformId;
 
+    
 
 /**
  * Get the value of titre
