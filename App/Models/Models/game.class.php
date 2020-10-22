@@ -115,5 +115,14 @@ $this->platformId = $platformId;
 
 return $this;
 }
-}
 
+
+function createNewGame($id, $titre, $date, $link, $developerId, $platformId) {
+    return new createNewGame($id, $titre, $date, $link, $developerId, $platformId);
+
+function fetchAllGame() {
+    global $dbh;
+
+    $stmt = $dbh->query('SELECT * FROM `game`');
+    return $stmt->fetchAll(PDO::FETCH_FUNC, 'createNewGame');
+}

@@ -1,4 +1,7 @@
 <?php
+
+require_once '/App/Models/mother.class.php';
+
 final class Plateform extends Mother
 {
 
@@ -42,4 +45,16 @@ public function __construct(
 
         return $this;
     }
+
+    function createNewPlatform($id, $name, $link) {
+        return new createNewPlatform($id, $name, $link);
+    
+    function fetchAllPlatform() {
+        global $dbh;
+    
+        $stmt = $dbh->query('SELECT * FROM `platform`');
+        return $stmt->fetchAll(PDO::FETCH_FUNC, 'createNewPlatform');
+    }
+
+    
 

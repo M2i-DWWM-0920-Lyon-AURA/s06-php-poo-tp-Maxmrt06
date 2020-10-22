@@ -43,14 +43,13 @@ public function __construct(
         return $this;
     }
 
-    function create($id, $name, $price, $brandId, $ram) {
-        return new GpuComponent($id, $name, $price, $brandId, $ram);
-    }
+    function createNewDeveloper($id, $name, $link) {
+        return new createNewDeveloper($id, $name, $link);
     
-    function fetchAllGpuComponents() {
-        global $databaseHandler;
+    function fetchAllDeveloper() {
+        global $dbh;
     
-        $statement = $databaseHandler->query('SELECT * FROM `gpus`');
-        return $statement->fetchAll(PDO::FETCH_FUNC, 'createGpuComponent');
+        $stmt = $dbh->query('SELECT * FROM `developer`');
+        return $stmt->fetchAll(PDO::FETCH_FUNC, 'createNewDeveloper');
     }
     
